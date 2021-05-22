@@ -136,7 +136,50 @@
 
 
                 </li>
-        
+                <?php foreach ($parent_nav as $prow): ?>
+                    <?php if ($prow->MENU_TEXT == $this->session->userdata('parent_name')) {
+                        $class = 'active';
+                        $open = 'menu-open';
+                        ?>
+                        <li class="treeview <?php echo $class . ' ' . $open; ?>">
+
+                    <?php } else { ?>
+                        <li class="treeview">
+                    <?php } ?>
+                    <a href="<?php if ($prow->MENU_URL == "#") {
+                        echo "javascript:;";
+                    } else {
+                        echo base_url() . $prow->MENU_URL;
+                    } ?>" class="nav-link nav-toggle">
+                        <i class="fa fa-folder"></i>
+                        <span class="title"><?php echo $prow->MENU_TEXT; ?></span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <?php $child_menus = $MY_Controller->fetchsidebarChildMenuById($prow->MENU_ID); ?>
+                        <?php foreach ($child_menus as $child_menuss => $val) {
+                            //print_r($val->MENU_TEXT);
+                            ?>
+                            <?php if ($prow->MENU_ID == $val->PARENT_ID) { ?>
+                                <?php if ($val->MENU_TEXT == $this->session->userdata('child_name')) {
+                                    $class1 = 'active';
+                                    ?>
+                                    <li class="nav-item <?= $class1 ?>">
+                                <?php } else { ?>
+                                    <li class="nav-item">
+                                <?php } ?>
+                                <a href="<?php echo base_url() . "generals/getpage/" . $val->MENU_ID; ?>"
+                                   class="nav-link ">
+                                    <span class="title"><?php echo $val->MENU_TEXT; ?></span>
+                                </a>
+                                </li>
+                            <?php } ?>
+                        <?php } ?>
+                    </ul>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </section>
         <!-- /.sidebar -->
