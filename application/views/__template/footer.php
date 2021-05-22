@@ -2,9 +2,9 @@
 <!-- /.content-wrapper -->
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 1.4.0
+        <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2019 <a href="https://phptiger.com">PHP Tiger Technologies</a>.</strong> All rights
+    <strong>Copyright &copy; 2021 Sistem Inventaris oleh Kelompok 5.</strong> All rights
     reserved.
 </footer>
 </div>

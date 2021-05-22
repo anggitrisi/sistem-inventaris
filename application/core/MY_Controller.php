@@ -1,10 +1,16 @@
 <?php
 
 class MY_Controller extends CI_Controller{
+   
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Menus');
+        $this->load->model('Menus'); 
+        if($this->session->userdata('user_id')){
+
+        } else {
+            redirect(base_url());
+        }
     }
     public function header($title)
     {

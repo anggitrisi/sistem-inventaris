@@ -40,18 +40,18 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue">
+<body class="hold-transition skin-purple">
 <div class="wrapper">
 
     <header class="main-header">
         <!-- Logo -->
         <a href="<?=base_url()?>index.php/dashboard" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>K</b>UMS</span>
+            <span class="logo-mini"><b>SI</b></span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">
+                 <b>Sistem Inventaris</span>
                 
-
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -121,7 +121,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
                     <a href="#" class="nav-link nav-toggle">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        <i class="fa fa-dashboard "></i> <span>Dashboard</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -151,7 +151,7 @@
                     } else {
                         echo base_url() . $prow->MENU_URL;
                     } ?>" class="nav-link nav-toggle">
-                        <i class="fa fa-folder"></i>
+                        <i class="<?php echo $prow->icon; ?>"></i>
                         <span class="title"><?php echo $prow->MENU_TEXT; ?></span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
